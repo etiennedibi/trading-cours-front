@@ -23,7 +23,7 @@ export class AuthService {
     })
   };
 
-  login(data:any): Observable<any>  {     
+  login(data:any): Observable<any>  {
     return this.http.post(environment.apiUrl + '/user/login',data,this.httpOptions)
       // .pipe( map(res =>{
       //   /*if (res) {
@@ -33,7 +33,7 @@ export class AuthService {
       //   return res;
 
       // }))
-    
+
   }
 
   register(data:any): Observable<any> {
@@ -51,5 +51,5 @@ export class AuthService {
     }
     console.log(errorMessage);
     return throwError(errorMessage);
-}
+  }
 }

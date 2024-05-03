@@ -1,0 +1,17 @@
+<!--<swiper [slidesPerView]="3" [spaceBetween]="10" [navigation]="true" [scrollbar]="{ draggable: true }">
+  <ng-template swiperSlide class="animate__animated animate__fadeIn">
+    <div class="row">
+      <h1>{{ chapitre.ordre }}</h1>
+      <p>{{ chapitre.titre | uppercase }}</p>
+      <button class="btn btn-detail">see more</button>
+    </div>
+  </ng-template>
+</swiper>-->
+<div class="col-lg-4 preview-module">
+  <div class="row">
+    <h1>{{ chapitre.ordre }}</h1>
+    <p>{{ chapitre.titre | uppercase }}</p>
+    <button class="btn btn-detail" (click)="onViewChapitre()">see more</button>
+  </div>
+</div>
+

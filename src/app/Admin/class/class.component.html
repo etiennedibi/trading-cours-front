@@ -6,7 +6,7 @@
             <div class="row">
                 <img src="../../assets/icons/LogoBlue.png" alt="logo">
                 <button class="btn"><a href="boards/home">Dashboard</a></button>
-                <button class="btn"><a href="boards/courses">Edit Modules</a></button>
+                <button class="btn"><a href="boards/modules">Edit Modules</a></button>
                 <button class="btn actvd"><a href="boards/class">Class</a></button>
                 <button class="btn"><a href="boards/forums">Forums</a></button>
                 <button class="btn btn-logout"><a href="boards/login">Logout</a></button>
@@ -56,164 +56,25 @@
                 <div class="col-lg-12 profil-datas-bloc">
                     <div class="row datas-container">
                         <swiper [slidesPerView]="2" [spaceBetween]="10" [navigation]="true" [scrollbar]="{ draggable: true }" class="swiper-items">
-                            <ng-template swiperSlide class="slide-students animate__animated animate__fadeIn">
-                                <div class="row">
+                            <ng-template swiperSlide class="animate__animated animate__fadeIn">
+                                <a routerLink="students">
+                                  <div class="row">
                                     <p>
                                         <span>0</span> <br> STUDENTS LIST
                                     </p>
-                                </div>
+                                  </div>
+                                </a>
                             </ng-template>
-                            <ng-template swiperSlide class="slide-exams animate__animated animate__fadeIn">
-                                <div class="row">
+                            <ng-template swiperSlide class="animate__animated animate__fadeIn">
+                                <a routerLink="exams">
+                                  <div class="row">
                                     <p>
                                         <span>2 (UNREAD)</span> <br>  EXAMS CORRECTION
                                     </p>
-                                </div>
+                                  </div>
+                                </a>
                             </ng-template>
                         </swiper>
-
-
-                        <!-- USERS LIST CONTAINER -->
-                        <div class="class-cont conts">
-                            <div class="row">
-
-                                <!-- MENUS -->
-                                <div class="col-lg-12 menu-bloc">
-                                    <button class="btn btn-students"> Students list </button>
-                                    <button class="btn btn-exams"> Exams correction </button>
-                                </div>
-
-
-                                <!-- USERS LIST -->
-                                <div class="col-lg-12 data preview users-container">
-                                    <div class="row">
-                                        <div class="col-lg-4 reseau-bloc">
-                                            <div class="div">
-                                                <a href="profil">
-                                                    <div class="row">
-                                                        <div class="img"></div>
-                                                        <h6> Essien Yavo Alain </h6>
-                                                        <p> Progression : Module actuel ici </p>
-                                                        <p class="p1"> Inscrit le : date d'inscription </p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 reseau-bloc">
-                                            <div class="div">
-                                                <a href="profil">
-                                                    <div class="row">
-                                                        <div class="img"></div>
-                                                        <h6> Alan Yapo </h6>
-                                                        <p> Progression : Module actuel ici </p>
-                                                        <p class="p1"> Inscrit le : date d'inscription </p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 reseau-bloc">
-                                            <div class="div">
-                                                <a href="profil">
-                                                    <div class="row">
-                                                        <div class="img"></div>
-                                                        <h6> Alan Yapo </h6>
-                                                        <p> Progression : Module actuel ici </p>
-                                                        <p class="p1"> Inscrit le : date d'inscription </p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 reseau-bloc">
-                                            <div class="div">
-                                                <a href="profil">
-                                                    <div class="row">
-                                                        <div class="img"></div>
-                                                        <h6> Alan Yapo </h6>
-                                                        <p> Progression : Module actuel ici </p>
-                                                        <p class="p1"> Inscrit le : date d'inscription </p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <!-- EXAMS LIST -->
-                                <div class="col-lg-12 data preview exams-container">
-                                    <div class="row">
-                                        <div class="col-lg-4 reseau-bloc user-exam">
-                                            <div class="div read">
-                                                <div class="row">
-                                                    <div class="img"></div>
-                                                    <h6> Essien Yavo Alain </h6>
-                                                    <p> Module : 5 - Leçon : 9 </p>
-                                                    <p class="p1"> 20 janvier 2023, 13h30 </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 reseau-bloc user-exam">
-                                            <div class="div">
-                                                <div class="row">
-                                                    <div class="img"></div>
-                                                    <h6> Alan Yapo </h6>
-                                                    <p> Module : 5 - Leçon : 9 </p>
-                                                    <p class="p1"> 20 janvier 2023, 13h30 </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 reseau-bloc user-exam">
-                                            <div class="div read">
-                                                <div class="row">
-                                                    <div class="img"></div>
-                                                    <h6> Alan Yapo </h6>
-                                                    <p> Module : 5 - Leçon : 9 </p>
-                                                    <p class="p1"> 20 janvier 2023, 13h30 </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 reseau-bloc user-exam">
-                                            <div class="div">
-                                                <div class="row">
-                                                    <div class="img"></div>
-                                                    <h6> Alan Yapo </h6>
-                                                    <p> Module : 5 - Leçon : 9 </p>
-                                                    <p class="p1"> 20 janvier 2023, 13h30 </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- DISPLAY EXAM -->
-                        <div class="conts exams-cont">
-                            <div class="row">
-                                <!-- MENUS -->
-                                <div class="col-lg-12 menu-bloc">
-                                    <button class="btn slide-exams"> Exams List </button>
-                                </div>
-                                <!-- DISPLAY -->
-                                <div class="col-lg-12 display-exam">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <a href="profil"> Alain Yavo </a>
-                                        </div>
-                                        <div class="col-lg-4 cent"> <p>Module 05 - Lesson 6</p> </div>
-                                        <div class="col-lg-4 end"> Lundi 15 janvier 2023 </div>
-                                        <img src="../../../assets/images/exo.jpg" alt="exam photo">
-                                        <div class="btns-interaction">
-                                            <button class="btn btn-meet"> program a meet </button>
-                                            <button class="btn btn-screenshot"> Send a screenshot </button>
-                                            <button class="btn btn-next-course"> authorize next course </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
 
                     </div>
                 </div>
@@ -236,7 +97,7 @@
                     <button class="btn"><a href="boards/home">Dashboard</a></button>
                 </ng-template>
                 <ng-template swiperSlide class="animate__animated animate__fadeIn">
-                    <button class="btn"><a href="boards/courses">Edit Modules</a></button>
+                    <button class="btn"><a href="boards/modules">Edit Modules</a></button>
                 </ng-template>
                 <ng-template swiperSlide class="animate__animated animate__fadeIn">
                     <button class="btn"><a href="boards/class">Class</a></button>
@@ -253,86 +114,3 @@
 
 </div>
 
-
-<!-- SEND SCREENSHOT POPUP -->
-<div class="cont-edit container-screenshot  animate__animated">
-    <div class="datas-popup animate__animated animate__zoomIn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-x-circle close-screenshot" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-        </svg>
-        <h3> SEND SCREENSHOT </h3>
-        <form action="#" class="screenshot-form-edit">
-            <div class="mb-3">
-                <label for="formFileLg" class="form-label">Add a screenshot</label>
-                <input class="form-control form-control-lg" id="formFileLg" type="file"/>
-            </div>
-            <div class="mb-3">
-                <label for="formFileLg" class="form-label">Add a comment</label>
-                <input class="form-control form-control-lg" type="text"/>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-check2-all validate-screenshot" viewBox="0 0 16 16">
-                <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
-                <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
-            </svg>
-        </form>
-        <p class="success-message">
-            course changed successfully
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-            </svg>
-        </p>
-    </div>
-</div>
-
-<!-- PROGRAM A MEET POPUP -->
-<div class="cont-edit container-meet animate__animated">
-    <div class="datas-popup animate__animated animate__zoomIn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-x-circle close-edit-meet" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-        </svg>
-        <h3> PROGRAM A MEET </h3>
-        <form action="#" class="meet-form-edit">
-            <div class="mb-3">
-                <label for="formFileLg" class="form-label">Meet link</label>
-                <input class="form-control form-control-lg" type="text"/>
-            </div>
-            <div class="mb-3">
-                <label for="formFileLg" class="form-label">Meet date</label>
-                <input class="form-control form-control-lg" type="text"/>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-check2-all validate-meet" viewBox="0 0 16 16">
-                <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
-                <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
-            </svg>
-        </form>
-        <p class="success-message">
-            successfully scheduled meet
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-            </svg>
-        </p>
-    </div>
-</div>
-
-
-<!-- NEXT COURSE POPUP -->
-<div class="cont-edit container-next-course animate__animated">
-    <div class="datas-popup animate__animated animate__zoomIn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-x-circle close-next-course" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-        </svg>
-        <div class="request-bloc">
-            <h3> ALLOW NEXT LESSON ? </h3>
-            <button class="btn btn-accept"> Agree </button>
-        </div>
-        <p class="success-message">
-            The student can access the next course
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-            </svg>
-        </p>
-    </div>
-</div>

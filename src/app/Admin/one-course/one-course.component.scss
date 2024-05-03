@@ -1,0 +1,36 @@
+@import '../../partials/utils/variables';
+
+.block-course {
+  background: #3366992b;
+  color: $white;
+  color: $black;
+  cursor: pointer;
+  @include centered;
+  font-size: $size-small;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 2vh;
+  border-radius: 4px;
+  &:hover {
+      background: #3366995b;
+  }
+
+  .row {
+      width: $full-percent;
+      .col-lg-2:nth-child(1) {
+          text-align: start;
+          margin-bottom: 10px;
+          svg {
+              margin-top: -3px;
+              color: #336699;
+          }
+      }
+      .col-lg-8:nth-child(2) {
+          text-align: center;
+      }
+      .col-lg-2:nth-child(3) {
+          text-align: end;
+      }
+  }
+
+}

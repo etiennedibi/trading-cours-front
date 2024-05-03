@@ -20,7 +20,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]);
 })
 export class ProfilComponent implements OnInit {
 
-  // For profil 
+  // For profil
   profil: any={}
   profilPath: string = ''
   apiUrl = environment.apiUrl
@@ -32,7 +32,7 @@ export class ProfilComponent implements OnInit {
   file: any = null;
 
   // For Activation
-  isActive = 0
+  isActive = 1
 
   constructor (
     private router: Router,
@@ -153,77 +153,77 @@ export class ProfilComponent implements OnInit {
         .subscribe((response:any) => {
             this.profil = response.userInfos
             this.profilPath = response.userAvatarPath
-        })  
-        
+        })
+
   }
 
   submitUpdateProfilName() {
     this.moreUserInfoService.PostMoreInfo(this.nameForm.value)
       .pipe(first())
       .subscribe(
-        (response) =>{  
+        (response) =>{
           if (response.code == 200 ) {
             this.nameForm.reset()
             this.GetProfilInfol(this.localStorageService.getUser())
           } else {
             console.log(response.error);
           }
-    
+
       })
-     ;  
+     ;
   }
   submitUpdateProfilPhone() {
     this.moreUserInfoService.PostMoreInfo(this.phoneForm.value)
       .pipe(first())
       .subscribe(
-        (response) =>{  
+        (response) =>{
           if (response.code == 200 ) {
             this.phoneForm.reset()
             this.GetProfilInfol(this.localStorageService.getUser())
           } else {
             console.log(response.error);
           }
-    
+
       })
-     ;  
+     ;
   }
   submitUpdateProfilPassword() {
     this.moreUserInfoService.PostMoreInfo(this.passwordForm.value)
       .pipe(first())
       .subscribe(
-        (response) =>{  
+        (response) =>{
           if (response.code == 200 ) {
             this.passwordForm.reset()
             this.GetProfilInfol(this.localStorageService.getUser())
           } else {
             console.log(response.error);
           }
-    
+
       })
-     ;  
+     ;
   }
   onFileSelected(event: any) {
     this.file = event.target.files[0]
-    
+
   }
   submitUpdateProfilAvatar() {
     let formData = new FormData();
     formData.append('avatar', this.file)
     console.log(formData);
-    
+
     this.moreUserInfoService.PostMoreInfo(formData)
       .pipe(first())
       .subscribe(
-        (response) =>{  
+        (response) =>{
           if (response.code == 200 ) {
             this.file = null
             this.GetProfilInfol(this.localStorageService.getUser())
           } else {
             console.log(response.error);
           }
-    
+
       })
-     ;  
+     ;
   }
 
 }

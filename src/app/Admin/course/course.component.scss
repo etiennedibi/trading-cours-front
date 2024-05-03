@@ -123,6 +123,7 @@
 
         .profil-datas-bloc {
             height: 80vh;
+            width: $full-percent;
             padding: 0;
             margin: 0;
             overflow: hidden;
@@ -137,92 +138,63 @@
                 padding: 0;
                 @include centered;
                 .swiper{
-                    width: 88%;
-                    margin-top: -1vh;
-                    z-index: 40;
+                    width: $full-percent;
+                    height: 28vh;
+                    padding-left: 1%;
+                    padding-right: 1%;
+                    @include centered;
                     .swiper-slide{
+                        width: $full-percent;
+                        height: $full-percent;
+                        padding: 0;
+                        margin: 0;
                         @include centered;
-                            .module-bloc {
-                                @include centered;
-                                /*background: linear-gradient(to right top, #2c3e50, #1d4455, #074a54, #004f4f, #0b5345);*/
-                                background: #336699d9;
-                                height: 40px;
-                                border-radius: 16px;
-                                color: $white;
-                                width: 220px;
-                                padding: 15px;
-                                cursor: pointer;
-                                font-weight: normal;
-                                letter-spacing: 4px;
-                                font-size: 0.7rem;
+                        a {
+                          height: $full-percent;
+                          width: $full-percent;
+                          padding: 0;
+                          .row {
+                            background-color: rgba(255, 255, 255, 0.6);
+                            height: $full-percent;
+                            width: $full-percent;
+                            padding: 0;
+                            padding-left: 10px;
+                            @include centered;
+                            p {
                                 text-align: center;
+                                span {
+                                    font-family: $family-bold;
+                                    font-size: $size-great;
+                                    color: $blue-degraded-one;
+                                }
                             }
-                    }
-                    .swiper-button-prev, .swiper-button-next {
-                        color: $black;
-                        background: #f4f4f4d9;
-                        height: 35px;
-                        width: 35px;
-                        border-radius: 100%;
-                        &::after, &::after{
-                            font-size: 10px!important ;
+                          }
                         }
+                    }
+
+                    .swiper-button-prev, .swiper-button-next {
+                        color: white;
+                        height: 40px;
+                        width: 40px;
+                        background: $blue-degraded-one;
+
+                        border-radius: 100%;
+
+                        &::after, &::after{
+                            font-size: 15px!important;
+                        }
+                    }
+
+                    .swiper-button-prev {
+                        margin-left: 10px;
+                    }
+                    .swiper-button-next {
+                        margin-right: 10px;
                     }
                 }
 
-                .courses-liste-container {
-                    height: 50vh;
-                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-                    width: 90%;
-                    overflow: hidden;
-                    overflow-y: auto;
-                    .row {
-                        padding: 0;
-                        margin: 0;
-                        .module-courses-bloc {
-                            h5 {
-                                color: #4A4B4B;
-                                margin-bottom: 5vh;
-                                text-align: center;
-                                .serviceNumberTitile {
-                                    font-size: 2.5rem;
-                                    color: #336699;
-                                    font-weight: bold;
-                                }
-                            }
-                            .col-12 {
-                                background: #3366992b;
-                                color: $white;
-                                color: $black;
-                                cursor: pointer;
-                                @include centered;
-                                font-size: $size-small;
-                                padding: 3px;
-                                padding-bottom: 0;
-                                margin-bottom: 2vh;
-                                height: 45px;
-                                border-radius: 4px;
-                                &:hover {
-                                    background: #3366994b;
-                                }
-                                .row {
-                                    width: $full-percent;
-                                    .col-4:nth-child(1) {
-                                        text-align: start;
-                                        svg {
-                                            margin-top: -3px;
-                                        }
-                                    }
-                                    .col-4:nth-child(2) {
-                                        text-align: end;
-                                    }
-                                    .col-4:nth-child(3) {
-                                        text-align: end;
-                                    }
-                                }
-                            }
-                        }
-                    }
+                .swiper-3d .swiper-slide-shadow-left, .swiper-3d .swiper-slide-shadow-right {
+                    background-image: none;
                 }
             }
         }
@@ -325,7 +297,7 @@
     }
     .popup-menu-social {
         text-align: center;
-        width: 70%;
+        width: 60%;
         display: none;
         .menu-social{
             background: transparent;
@@ -335,6 +307,7 @@
                 padding-left: 1%;
                 padding-right: 1%;
                 @include centered;
+                display: none;
                 .swiper-slide{
                     width: $full-percent;
                     height: $full-percent;
@@ -380,71 +353,10 @@
     }
 }
 
-//EDIT COURSE AND MODULES POPUP
-.cont-edit {
-    z-index: 50;
-    background: linear-gradient(190deg, rgba(0, 23, 46, .6), #00172E);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: $full-percent;
-    height: $full-vh;
-    @include centered;
-    display: none;
-    .datas-popup {
-        width: 450px;
-        padding: 40px;
-        margin-left: 10px;
-        background: $white;
-        padding-top: 2vh;
-        border-radius: 5px;
-        text-align: left;
-        color: #00172E;
-        cursor: pointer;
-        .bi-x-circle {
-            position: absolute;
-            right: -8px;
-            top: -10px;
-        }
-        h3 {
-            margin-bottom: 3vh;
-            margin-top: 1vh;
-            font-family: $family-bold;
-            text-align: center;
-        }
-        .mb-3 {
-            .form-control {
-                background: $white;
-                outline: none !important;
-                font-size: $size-small;
-                &:focus {
-                    outline: none !important;
-                }
-            }
-        }
-        .validate-form {
-            margin-left: 45%;
-        }
-        .success-message {
-            display: none;
-            font-size: 1.2rem;
-            font-family: $family-normal;
-            color: #00172E;
-            text-align: center;
-            svg {
-                color: $blue-degraded-one;
-                margin-left: 10px;
-            }
-        }
-    }
-}
-
 a {
     text-decoration: none;
     color: #00172E;
 }
-
-
 
 /*/ ---------------------------------------------------------- RESPONSIVE DESIGN (MAX WIDTH: 1200PX) -----------------------------------------------------------/*/
 @media screen and (max-width: 1200px) {

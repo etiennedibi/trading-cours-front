@@ -1,10 +1,13 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { TokenStorageService } from '../services/token-storage.service';
+import { ChapitreService } from '../services/chapitre.service';
+import { Course } from '../models/course.models';
+import { Observable } from 'rxjs';
 declare var $: any;
 
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, EffectCoverflow } from 'swiper';
-import { TokenStorageService } from '../services/token-storage.service';
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]);
 
 @Component({
@@ -14,13 +17,42 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]);
   encapsulation: ViewEncapsulation.None
 })
 export class FormationsListComponent implements OnInit {
-  token:any 
+
+  //courses: Course [] = [];
+  //courses$!: Observable<Course[]>;
+  course$!: Observable<Course>;
+
+  courses: Course[] = [];
+  coursesone$!: Observable<Course[]>;
+  coursestwo$!: Observable<Course[]>;
+  coursesthree$!: Observable<Course[]>;
+  coursesfour$!: Observable<Course[]>;
+  coursesfive$!: Observable<Course[]>;
+  coursessix$!: Observable<Course[]>;
+  coursesseven$!: Observable<Course[]>;
+  courseseight$!: Observable<Course[]>;
+
+  token:any
   constructor (
     private router: Router,
+    private route: ActivatedRoute,
     private localStorageService: TokenStorageService,
+    private chapitreService: ChapitreService
     ) {}
 
   ngOnInit(): void {
+    //this.courses$ = this.chapitreService.getAllCourses()
+    this.coursesone$ = this.chapitreService.getAllModuleCoursesById(5)
+    this.coursestwo$ = this.chapitreService.getAllModuleCoursesById(6)
+    this.coursesthree$ = this.chapitreService.getAllModuleCoursesById(7)
+    this.coursesfour$ = this.chapitreService.getAllModuleCoursesById(8)
+    this.coursesfive$ = this.chapitreService.getAllModuleCoursesById(9)
+    this.coursessix$ = this.chapitreService.getAllModuleCoursesById(10)
+    this.coursesseven$ = this.chapitreService.getAllModuleCoursesById(11)
+    this.courseseight$ = this.chapitreService.getAllModuleCoursesById(12)
+
+
+
     $(document).ready(function () {
       $(".courses-bloc-row").css("display","none");
       $(".bloc-zero").css("display","flex");

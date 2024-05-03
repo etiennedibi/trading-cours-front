@@ -15,7 +15,7 @@ declare var $: any;
 export class AuthentificationComponent implements OnInit {
   submitted_signin:boolean = false;
   submitted_register:boolean = false;
-  
+
   sended_register:boolean = false
   sended_signin:boolean = false
 
@@ -45,7 +45,7 @@ export class AuthentificationComponent implements OnInit {
       this.signinForm = this.fb.group({
         telephone:['',Validators.required],
         password:['',Validators.required]
-        
+
       });
 
       this.registerForm = this.fb.group({
@@ -53,7 +53,7 @@ export class AuthentificationComponent implements OnInit {
         telephone:['',Validators.required ],
         password:['',Validators.required],
         password_confirmation:['',Validators.required]
-        
+
       });
     }
 
@@ -85,20 +85,20 @@ export class AuthentificationComponent implements OnInit {
     this.authService.login(this.signinForm.value)
       .pipe(first())
       .subscribe(response =>{
-        
+
         if (response.status == "ok") {
           console.log("log-in");
-          
+
           this.sended_signin = true
           this.loading = false
           this.signin_faild = false
-            
+
           this.localStorageService.saveRecovery(response.token.token)
           this.localStorageService.saveUser(response.userInfos.id)
           this.localStorageService.saveUserActivation(response.userInfos.is_active)
-          
+
           this.loading = false
-        
+
           setTimeout(() => {
             this.router.navigateByUrl('/profil')
           }, 1000)
@@ -111,9 +111,9 @@ export class AuthentificationComponent implements OnInit {
           this.loading = false
 
         }
-      
+
       })
-       
+
   }
 
 
@@ -126,15 +126,15 @@ export class AuthentificationComponent implements OnInit {
       this.sended_register = false
       //this.register_faild = true
       return;
-    }      
-    
+    }
+
     this.authService.register(this.registerForm.value)
       .pipe(first())
       .subscribe(
         (response) =>{
-          
-          if (response.code == 200 ) {    
-            console.log("connected");        
+
+          if (response.code == 200 ) {
+            console.log("connected");
             this.sended_register = true
             this.register_faild = false
 
@@ -154,9 +154,9 @@ export class AuthentificationComponent implements OnInit {
             this.loading = false
 
           }
-    
+
       })
-      
-     ;  
+
+     ;
   }
 }

@@ -1,0 +1,79 @@
+@import '../../partials/utils/variables';
+
+.preview-module{
+  text-align: center;
+  margin-bottom: 2vh;
+  margin-left: 33%;
+  .row{
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    @include centered;
+    h1 {
+      font-size: 2.5rem;
+      color: #336699;
+      font-weight: bold;
+    }
+    .btn-detail {
+      background: #3366992b;
+      width: 150px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+/*.swiper{
+  width: $full-percent;
+  height: 28vh;
+  padding-left: 1%;
+  padding-right: 1%;
+  @include centered;
+  .swiper-slide{
+    width: $full-percent;
+    height: $full-percent;
+    padding: 0;
+    margin: 0;
+    @include centered;
+    .row {
+        background-color: rgba(255, 255, 255, 0.6);
+        height: $full-percent;
+        width: $full-percent;
+        padding: 0;
+        padding-left: 10px;
+        @include centered;
+        text-align: center;
+        h1 {
+          font-size: 2.5rem;
+          color: #336699;
+          font-weight: bold;
+        }
+        .btn-detail {
+          background: #3366992b;
+          width: 150px;
+        }
+    }
+  }
+  .swiper-button-prev, .swiper-button-next {
+      color: white;
+      height: 40px;
+      width: 40px;
+      background: $blue-degraded-one;
+
+      border-radius: 100%;
+
+      &::after, &::after{
+          font-size: 15px!important;
+      }
+  }
+  .swiper-button-prev {
+      margin-left: 10px;
+  }
+  .swiper-button-next {
+      margin-right: 10px;
+  }
+}
+
+.swiper-3d .swiper-slide-shadow-left, .swiper-3d .swiper-slide-shadow-right {
+    background-image: none;
+}*/
+
