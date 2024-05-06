@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+declare var $: any;
 
 @Component({
   selector: 'app-trading-one',
@@ -17,5 +18,17 @@ export class TradingOneComponent implements OnInit {
   constructor(private router: Router, private chapitreService: ChapitreService, private localStorageService: TokenStorageService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+
+    $(document).ready(function () {
+      //APERÇU DES VIDEOS
+      $(".views").click(function() {
+        $(".view").css("display", "flex");
+        $(".view").fadeIn(200);
+      });
+      $(".close-view").click(function() {
+        $(".view").fadeOut(200);
+      });
+    })
+
   }
 }

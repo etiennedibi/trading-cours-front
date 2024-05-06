@@ -143,49 +143,10 @@
                   height: $full-percent;
                   padding: 0;
                   margin: 0;
+                  overflow-y: auto;
+                  @include centered;
                   .row {
-
-                  .reseau-bloc {
-                    height: 40vh;
-                    margin-bottom: 2vh;
-                    .div {
-                      background:  #3366991a;
-                      width: $full-percent;
-                      height: $full-percent;
-                      margin: 0;
-                      padding: 15px;
-                      .row {
-                          width: $full-percent;
-                          height: $full-percent;
-                          padding: 0;
-                          margin: 0;
-                          text-align: center;
-                          .img {
-                              height: 60%;
-                              padding: 0;
-                              margin: 0;
-                              background: url('../../../assets/images/Concept2.png');
-                              background-size: contain;
-                              background-repeat: no-repeat;
-                              background-position: center;
-                          }
-                          h6 {
-                              font-family: $family-bold;
-                              margin: 0;
-                              padding: 0;
-                          }
-                          p {
-                              margin-top: -1vh;
-                              font-weight: $bold;
-                          }
-                          .p1 {
-                              font-size: $size-small;
-                              margin-top: -3vh;
-                          }
-                      }
-                    }
-                  }
-
+                    @include centered;
                   }
                 }
             }

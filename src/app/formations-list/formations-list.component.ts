@@ -102,16 +102,6 @@ export class FormationsListComponent implements OnInit {
         $(".bloc-eight").fadeIn(200);
       });
 
-      $(".btn-9").click(function() {
-        $(".courses-bloc-row").css("display","none");
-        $(".bloc-nine").fadeIn(200);
-      });
-
-      $(".btn-10").click(function() {
-        $(".courses-bloc-row").css("display","none");
-        $(".bloc-ten").fadeIn(200);
-      });
-
       //
       $(".menuModalIcon").click(function() {
         $(".menu-blc").addClass("animate__fadeInLeft");
@@ -138,23 +128,6 @@ export class FormationsListComponent implements OnInit {
         $(".session-bloc").addClass("animate__fadeOutRight");
         $(".session-bloc").removeClass("animate__fadeInRight");
         $(".container-session").fadeOut(200);
-      });
-
-      //APERÇU DES VIDEOS
-      $(".views-1").click(function() {
-        $(".view-1").css("display", "flex");
-        $(".view-1").fadeIn(200);
-      });
-      $(".views-2").click(function() {
-        $(".view-2").css("display", "flex");
-        $(".view-2").fadeIn(200);
-      });
-      $(".views-3").click(function() {
-        $(".view-3").css("display", "flex");
-        $(".view-3").fadeIn(200);
-      });
-      $(".close-view").click(function() {
-        $(".container-popup-cours-view").fadeOut(200);
       });
 
     });

@@ -244,32 +244,6 @@
     }
 }
 
-//
-.container-popup-cours-view {
-    z-index: 50;
-    background: linear-gradient(190deg, rgba(0, 23, 46, .2), #00172E);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: $full-percent;
-    height: $full-vh;
-    @include centered;
-    display: none;
-    .datas-popup {
-        width: 60%;
-        height: 60vh;
-        padding: 20px;
-        padding-bottom: 0px;
-        border-radius: 5px;
-        color: $white;
-        cursor: pointer;
-        .bi-x-circle {
-            position: absolute;
-            right: -8px;
-            top: -15px;
-        }
-    }
-}
 
 /* COURSES BLOC */
 .courses-bloc {
@@ -300,26 +274,30 @@
             padding: 3px;
             padding-bottom: 0;
             margin-bottom: 2vh;
-            height: 45px;
             border-radius: 4px;
+            height: 45px;
             &:hover {
                 background: #3366994b;
             }
-
-            .row {
+            a {
+              text-decoration: none;
+              width: $full-percent;
+              color: $black;
+              .row {
                 width: $full-percent;
-                .col-4:nth-child(1) {
+                .col-lg-4:nth-child(1) {
                     text-align: start;
                     svg {
                         margin-top: -3px;
                     }
                 }
-                .col-4:nth-child(2) {
+                .col-lg-4:nth-child(2) {
                     text-align: end;
                 }
-                .col-4:nth-child(3) {
+                .col-lg-4:nth-child(3) {
                     text-align: end;
                 }
+              }
             }
         }
     }

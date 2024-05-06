@@ -8,7 +8,7 @@
   @include centered;
   font-size: $size-small;
   padding: 10px;
-  padding-bottom: 20px;
+  padding-top: 15px;
   margin-bottom: 2vh;
   border-radius: 4px;
   &:hover {
@@ -17,19 +17,31 @@
 
   .row {
       width: $full-percent;
-      .col-lg-2:nth-child(1) {
+      .col-lg-3 {
           text-align: start;
           margin-bottom: 10px;
           svg {
               margin-top: -3px;
-              color: #336699;
           }
       }
-      .col-lg-8:nth-child(2) {
+      .col-lg-7 {
           text-align: center;
+          font-size: 1rem;
+          word-spacing: 5px;
+          letter-spacing: 2px;
       }
-      .col-lg-2:nth-child(3) {
+      .col-lg-2 {
           text-align: end;
+      }
+      .col-lg-12 {
+        text-align: end;
+        button {
+          background: #3366992b;
+          a {
+            text-decoration: none;
+            color: $black;
+          }
+        }
       }
   }
 

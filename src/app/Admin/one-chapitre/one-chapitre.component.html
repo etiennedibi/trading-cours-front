@@ -65,8 +65,17 @@
                               <div class="col-lg-12 courses-bloc animate__animated animate__fadeIn">
                                 <div class="row">
                                   <!-- modèle d'un cours -->
-                                  <h5 *ngIf="chapitre$ | async as chapitre"> <span class="serviceNumberTitile">{{ chapitre.ordre }}</span> &nbsp; {{ chapitre.titre| uppercase }} </h5>
-                                  <app-one-course *ngFor="let course of courses$ | async" [course]="course"></app-one-course>
+                                  <h5 *ngIf="chapitre$ | async as chapitre">
+                                    <span class="serviceNumberTitile">{{ chapitre.ordre }}</span> &nbsp; {{ chapitre.titre| uppercase }}
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                      <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                                    </svg>&nbsp;&nbsp;
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                      <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"/>
+                                    </svg>
+                                  </h5>
+                                  <app-one-course *ngFor="let course of courses$ | async; let i=index" [course]="course"></app-one-course>
                                 </div>
                               </div>
                             </div>
@@ -108,5 +117,105 @@
           </swiper>
       </div>
   </div>
+
+  <!-- EDIT COURSE POPUP
+  <div class="cont-edit container-edit-course  animate__animated">
+    <div class="datas-popup animate__animated animate__zoomIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-x-circle close-edit" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+        <h3> Course Edit </h3>
+        <form [formGroup]="editCourseForm" class="course-form-edit">
+            <div class="mb-3 form-group">
+                <label for="titre">Course title</label>
+                <input id="titre" type="text" formControlName="titre" class="form-control form-control-lg"/>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="resume">Course link</label>
+              <input id="resume" type="text" formControlName="resume" class="form-control form-control-lg"/>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="lien_exo">Exercise link</label>
+              <input id="lien_exo" type="text" formControlName="lien_exo" class="form-control form-control-lg"/>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="id_user">User code</label>
+              <input id="id_user" type="number" formControlName="id_user" class="form-control form-control-lg" />
+            </div>
+            <div class="mb-3 form-group">
+              <label for="id_module">Module number</label>
+              <input id="id_module" type="number" formControlName="id_module" class="form-control form-control-lg" />
+            </div>
+            <div class="mb-3 form-group">
+              <label for="duree">Video duration</label>
+              <input id="duree" type="text" formControlName="duree" class="form-control form-control-lg" />
+            </div>
+            <div class="action-buttons">
+              <button class="btn" type="submit" [disabled]="editCourseForm.invalid">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-check2-all validate-form" viewBox="0 0 16 16">
+                  <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
+                  <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
+                </svg>
+              </button>
+            </div>
+        </form>
+        <p class="success-message">
+            New course added successfully
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg>
+        </p>
+    </div>
+  </div>-->
+
+
+  <!-- EDIT MODULE POPUP
+  <div class="cont-edit container-edit-module  animate__animated">
+    <div class="datas-popup animate__animated animate__zoomIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-x-circle close-edit-module" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+        <h3> Module Edit </h3>
+        <form [formGroup]="editModuleForm" class="module-form-edit">
+            <div class="mb-3 form-group">
+              <label for="ordre">Module number</label>
+              <input id="ordre" type="number" formControlName="ordre" class="form-control form-control-lg" />
+            </div>
+            <div class="mb-3 form-group">
+                <label for="titre">Module title</label>
+                <input id="titre" type="text" formControlName="titre" class="form-control form-control-lg"/>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="description">Module describe</label>
+              <input id="description" type="text" formControlName="description" class="form-control form-control-lg"/>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="id_formation">Formation Code</label>
+              <input id="id_formation" type="number" formControlName="id_formation" class="form-control form-control-lg" />
+            </div>
+            <div class="mb-3 form-group">
+              <label for="id_user">User Code</label>
+              <input id="id_user" type="number" formControlName="id_user" class="form-control form-control-lg"/>
+            </div>
+            <div class="action-buttons">
+              <button class="btn" type="submit" (click)="onModifChapitreFormById()" [disabled]="editModuleForm.invalid">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-check2-all validate-form" viewBox="0 0 16 16">
+                  <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z"/>
+                  <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z"/>
+                </svg>
+              </button>
+            </div>
+        </form>
+        <p class="success-message">
+            New module added successfully
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg>
+        </p>
+    </div>
+  </div>-->
+
 </div>
 

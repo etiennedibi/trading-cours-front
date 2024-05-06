@@ -47,7 +47,7 @@ export class EditModuleComponent implements OnInit {
     //COURSE FORM VALIDATION
     this.courseForm = this.formBuilder.group({
       titre: ['', [Validators.required]],
-      resume: ['', [Validators.required]],
+      resume: ['', [Validators.required, Validators.pattern(this.urlRegex)]],
       lien_exo: ['', [Validators.required]],
       id_user: ['', [Validators.required]],
       id_module: ['', [Validators.required]],
@@ -60,7 +60,7 @@ export class EditModuleComponent implements OnInit {
     this.chapitrePreview$ = this.moduleForm.valueChanges.pipe(map(formValue => ({...formValue,id: 0})));
     this.coursePreview$ = this.courseForm.valueChanges.pipe(map(formValue => ({...formValue,id: 0})));
 
-    //this.urlRegex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
+    this.urlRegex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
 
     $(document).ready(function () {
 
@@ -95,6 +95,7 @@ export class EditModuleComponent implements OnInit {
 
       //FORMS INTERACTIONS
       $(".add-course").click(function() {
+        console.log($(".add-course"))
         $(".container-edit-course").css("display", "flex");
         $(".course-form-edit").css("display", "block");
         $(".success-message").css("display", "none");

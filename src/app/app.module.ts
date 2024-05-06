@@ -33,12 +33,12 @@ import { OneCourseComponent } from './Admin/one-course/one-course.component';
 import { TradingOneComponent } from './formations-list/trading-one/trading-one.component';
 import { TradingTwoComponent } from './formations-list/trading-two/trading-two.component';
 import { TradingThreeComponent } from './formations-list/trading-three/trading-three.component';
-import { AllCoursesComponent } from './all-courses/all-courses.component';
 import { TradingFourComponent } from './formations-list/trading-four/trading-four.component';
 import { TradingFiveComponent } from './formations-list/trading-five/trading-five.component';
 import { TradingSixComponent } from './formations-list/trading-six/trading-six.component';
 import { TradingSevenComponent } from './formations-list/trading-seven/trading-seven.component';
 import { TradingEightComponent } from './formations-list/trading-eight/trading-eight.component';
+import { StudentComponent } from './Admin/student/student.component';
 
 @NgModule({
   declarations: [
@@ -70,12 +70,12 @@ import { TradingEightComponent } from './formations-list/trading-eight/trading-e
     TradingOneComponent,
     TradingTwoComponent,
     TradingThreeComponent,
-    AllCoursesComponent,
     TradingFourComponent,
     TradingFiveComponent,
     TradingSixComponent,
     TradingSevenComponent,
-    TradingEightComponent
+    TradingEightComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,

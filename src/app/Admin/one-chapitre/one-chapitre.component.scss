@@ -171,7 +171,6 @@
 
 
 //ALL DATA OF A MODULE
-
 .module-data-bloc {
   width: $full-percent;
   @include centered;
@@ -193,6 +192,9 @@
               font-size: 2.5rem;
               color: #336699;
               font-weight: bold;
+          }
+          .bi {
+            color: #336699;
           }
         }
 

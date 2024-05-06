@@ -1,0 +1,44 @@
+@import '../../partials/utils/variables';
+
+.reseau-bloc {
+  margin-bottom: 2vh;
+  margin-left: 25%;
+  .div {
+    background:  #3366991a;
+    width: $full-percent;
+    height: $full-percent;
+    margin: 0;
+    padding: 15px;
+    .row {
+        width: $full-percent;
+        height: $full-percent;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        h6 {
+          font-family: $family-bold;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          padding: 10px;
+        }
+        .form-check {
+          @include centered;
+          input {
+            height: 25px;
+            width: 50px;
+          }
+        }
+        p {
+          word-spacing: 3px;
+          letter-spacing: 3px;
+          font-size: .8rem;
+          margin-bottom: 3vh;
+          padding: 10px;
+        }
+    }
+  }
+}
+
+.aktiv {
+  background: $white;
+}

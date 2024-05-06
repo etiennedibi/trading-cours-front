@@ -36,6 +36,10 @@ export class ChapitreService {
     return this.http.get<Chapitre>(environment.apiUrl + `/module/${chapitreId}`)
   }
 
+  /*updateChapitreById(chapitreId: number): Observable<Chapitre> {
+    return this.http.put<Chapitre>(environment.apiUrl + `/update_module/${chapitreId}`)
+  }*/
+
   addChapitre(formValue: {ordre: number, titre: string, description: string, id_formation: number, id_user: number}): Observable<Chapitre> {
 
     return this.getAllChapitres().pipe(

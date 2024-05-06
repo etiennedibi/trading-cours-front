@@ -10,7 +10,6 @@
   padding: 3px;
   padding-bottom: 0;
   margin-bottom: 2vh;
-  height: 45px;
   border-radius: 4px;
   &:hover {
       background: #3366994b;
@@ -18,16 +17,16 @@
 
   .row {
       width: $full-percent;
-      .col-4:nth-child(1) {
+      .col-lg-4:nth-child(1) {
           text-align: start;
           svg {
               margin-top: -3px;
           }
       }
-      .col-4:nth-child(2) {
+      .col-lg-4:nth-child(2) {
           text-align: end;
       }
-      .col-4:nth-child(3) {
+      .col-lg-4:nth-child(3) {
           text-align: end;
       }
   }

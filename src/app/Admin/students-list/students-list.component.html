@@ -59,21 +59,7 @@
                       <!-- USERS LIST CONTAINER -->
                       <div class="class-cont conts">
                           <div class="row">
-
-                            <!-- USERS LIST -->
-                            <div class="col-lg-4 reseau-bloc">
-                              <div class="div">
-                                  <a href="profil">
-                                      <div class="row">
-                                          <div class="img"></div>
-                                          <h6> Essien Yavo Alain </h6>
-                                          <p> Progression : Module actuel ici </p>
-                                          <p class="p1"> Inscrit le : date d'inscription </p>
-                                      </div>
-                                  </a>
-                              </div>
-                            </div>
-
+                            <app-student *ngFor="let user of users$ | async" [user]="user"></app-student>
                           </div>
                       </div>
                   </div>

@@ -32,7 +32,7 @@ export class ProfilComponent implements OnInit {
   file: any = null;
 
   // For Activation
-  isActive = 1
+  isActive = 0
 
   constructor (
     private router: Router,
