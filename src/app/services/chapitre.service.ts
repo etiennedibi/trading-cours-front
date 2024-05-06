@@ -55,6 +55,9 @@ export class ChapitreService {
     //return this.http.post<Chapitre>(environment.apiUrl + '/add_module', formValue, this.httpOptions);
   }
 
+  deleteChapitreById(chapitreId: number): Observable<Chapitre> {
+    return this.http.delete<Chapitre>(environment.apiUrl + `/module/${chapitreId}`)
+  }
 
   //ALL METHODS OF COURSES
   getAllModuleCoursesById(chapitreId: number): Observable<Course[]> {
@@ -69,7 +72,6 @@ export class ChapitreService {
     console.log(courseId)
     return this.http.get<Course>(environment.apiUrl + `/cours/${courseId}`)
   }
-
 
   addCourse(formValue: {titre: string, resume: string, lien_exo: string, id_user: number, id_module: number, duree: string}): Observable<Course> {
     return this.http.post<Course>(environment.apiUrl + '/add_cours',formValue,this.httpOptions)

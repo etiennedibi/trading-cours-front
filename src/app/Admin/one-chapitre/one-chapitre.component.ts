@@ -19,6 +19,7 @@ export class OneChapitreComponent implements OnInit {
 
   chapitre!: Chapitre;
   chapitre$!: Observable<Chapitre>;
+  chapitreDelete$!: Observable<Chapitre>
 
   course$!: Observable<Course>;
 
@@ -97,7 +98,10 @@ export class OneChapitreComponent implements OnInit {
     });
   }
 
-  onDeleteChapitreById() {}
+  onDeleteChapitreById() {
+    const chapitreId = +this.route.snapshot.params['id'];
+    this.chapitreDelete$ = this.chapitreService.deleteChapitreById(chapitreId)
+  }
 
   /*onModifChapitreFormById() {
     this.chapitreService.updateChapitreById(this.editModuleForm.value).pipe(

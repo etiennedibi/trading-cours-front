@@ -170,7 +170,6 @@ export class ProfilComponent implements OnInit {
           }
 
       })
-     ;
   }
   submitUpdateProfilPhone() {
     this.moreUserInfoService.PostMoreInfo(this.phoneForm.value)

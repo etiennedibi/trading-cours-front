@@ -188,7 +188,6 @@
                 background: none;
                 transition: all .3s ease;
                 min-width: 155px;
-                height: 45px;
                 border-radius: 15px;
                 display: inline-block;
                 padding: 14px 28px 13px 28px;
@@ -200,6 +199,8 @@
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 color: $white;
+                text-align: left;
+                padding-top: 20px;
                 &:hover {
                     color: $white;
                     background: transparent;
@@ -256,13 +257,19 @@
         @include centered;
         h5 {
             color: #4A4B4B;
-            margin-bottom: 5vh;
+            margin-bottom: 2vh;
             text-align: center;
             .serviceNumberTitile {
                 font-size: 2.5rem;
                 color: #336699;
                 font-weight: bold;
             }
+        }
+
+        p {
+          text-align: center;
+          font-size: 1rem;
+          margin-bottom: 5vh;
         }
         .col-12 {
             background: #3366992b;
@@ -271,34 +278,40 @@
             cursor: pointer;
             @include centered;
             font-size: $size-small;
-            padding: 3px;
+            padding: 10px;
             padding-bottom: 0;
             margin-bottom: 2vh;
             border-radius: 4px;
-            height: 45px;
             &:hover {
                 background: #3366994b;
             }
-            a {
-              text-decoration: none;
+            .row {
               width: $full-percent;
-              color: $black;
-              .row {
-                width: $full-percent;
-                .col-lg-4:nth-child(1) {
-                    text-align: start;
-                    svg {
-                        margin-top: -3px;
+              @include centered;
+              margin-top: -10px;
+              .col-lg-3 {
+                text-align: start;
+                padding-bottom: 10px;
+                padding-top: 10px;
+                button {
+                  background: #3366992b;
+                    a {
+                      text-decoration: none;
+                      color: $black;
                     }
-                }
-                .col-lg-4:nth-child(2) {
-                    text-align: end;
-                }
-                .col-lg-4:nth-child(3) {
-                    text-align: end;
-                }
+                  }
               }
-            }
+              .col-lg-7 {
+                text-align: center;
+                font-size: 1rem;
+                word-spacing: 5px;
+                letter-spacing: 2px;
+              }
+              .col-lg-2 {
+                text-align: end;
+              }
+
+          }
         }
     }
 }
